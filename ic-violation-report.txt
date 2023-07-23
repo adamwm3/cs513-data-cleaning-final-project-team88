@@ -1,0 +1,46 @@
+def report_empty_value_count(df, fieldname):
+  try:
+    print("FIELD - country: " + str(df[fieldname].isna().sum()))
+  except KeyError:
+    print("FIELD - " + fieldname + " has been removed.")
+
+
+def ic_violation_report(df):
+  #Banner
+  print("==============START IC VIOLATION REPORT==============")
+  #Report Dataframe Summary
+  print("DATAFRAME SUMMARY: ")
+  print("-----------------------------------------------------")
+  df.info()
+  print("\n")
+  print("FIELD EMPTY VALUE REPORT: ")
+  print("-----------------------------------------------------")
+  #Check NA country violations
+  report_empty_value_count(df, 'country')
+  #Check NA description violations
+  report_empty_value_count(df, 'description')
+  #Check NA designation violations
+  report_empty_value_count(df, 'designation')
+  #Check NA points
+  report_empty_value_count(df, 'points')
+  #Check NA price
+  report_empty_value_count(df, 'price')
+  #Check NA province violations
+  report_empty_value_count(df, 'province')
+  #Check NA region_1 violations
+  report_empty_value_count(df, 'region_1')
+  #Check NA region_2 violations
+  report_empty_value_count(df, 'region_2')
+  #Check NA tastername
+  report_empty_value_count(df, 'taster_name')
+  #Check NA taster_twitter_handle
+  report_empty_value_count(df, 'taster_twitter_handle')
+  #Check NA title
+  report_empty_value_count(df, 'title')
+  #Check NA variety
+  report_empty_value_count(df, 'variety')
+  #Check NA winery
+  report_empty_value_count(df, 'winery')
+ 
+  #End Banner
+  print("==============END IC VIOLATION REPORT==============","\n")
